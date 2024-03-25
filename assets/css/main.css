@@ -2815,11 +2815,20 @@ input, select, textarea {
 	}
 
 	.list-item {
-		width: 25%; /* Adjust the width as needed */
+		width: 100%; /* Adjust the width as needed */
 		float: left; /* Float the list items left to create a single row */
 		box-sizing: border-box; /* Include padding and border in the width */
 		padding: 0 10px; /* Adjust as needed */
 	}
+
+	
+	@media screen and (min-width: 768px) {
+		.list-item {
+			width: 25%; /* Reset width for larger screens */
+			
+		}
+	}
+
 
 	/* Clearfix to clear the floats */
 	.features1::after {
@@ -4008,6 +4017,45 @@ input, select, textarea {
 
 	}
 
+	 /* @media screen and (max-width: 786px) {
+
+		.mini-posts {
+			display: block;
+			width: 100%;
+		}
+
+			.mini-posts > * {
+				margin: 0 0 2em 0;
+				width: 50%;
+				max-width: 300px;
+			}
+
+	} */
+
+	@media screen and (max-width: 786px) {
+		.mini-posts {
+			display: block;
+			width: 100%;
+			overflow-x: hidden; /* Ensure no horizontal overflow */
+			white-space: nowrap; /* Ensure mini-posts are in a single line */
+		}
+	
+		.mini-post {
+			
+			width: 50%; /* Adjust width to fit smaller screens */
+			height: 30%;
+			max-width: 300px; /* Set a maximum width for better readability */
+			margin: 0 auto; /* Center mini-post horizontally */
+		}
+	
+		.mini-post.active {
+			display: block; /* Show only the active mini-post */
+		}
+	}
+	
+	
+
+	
 	@media screen and (max-width: 480px) {
 
 		.mini-posts {
@@ -4187,6 +4235,31 @@ input, select, textarea {
 
 .image {
     margin-right: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+	.posts-container {
+		max-width: 90%; /* Adjust the maximum width for smaller screens */
+		padding: 10px; /* Adjust padding for smaller screens */
+	}
+    .posts-container.image {
+		max-width: 20%;
+        width: auto; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 10px; /* Adjust margin if necessary */
+		padding: 0
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .post.active .image img {
+        max-width: 125%;
+        width: auto; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 10px; /* Adjust margin if necessary */
+    }
 }
 
  .navigation {
